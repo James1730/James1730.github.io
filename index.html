@@ -90,6 +90,30 @@
         .cli-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
         .cli-grid .g-item img{aspect-ratio:4/3;object-fit:cover}
 
+        /* CLIENT REVIEWS */
+        .reviews{background:var(--black);padding:80px 50px}
+        .rev-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .rev-card{background:var(--black2);border:1px solid rgba(201,169,110,.12);border-radius:12px;padding:28px;position:relative}
+        .rev-stars{color:#F5A623;font-size:1rem;margin-bottom:12px;letter-spacing:2px}
+        .rev-text{color:var(--gray);font-size:.88rem;line-height:1.7;margin-bottom:20px;font-style:italic}
+        .rev-author{display:flex;align-items:center;gap:12px}
+        .rev-avatar{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--black);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem}
+        .rev-name{color:#fff;font-weight:600;font-size:.9rem}
+        .rev-country{color:var(--gray);font-size:.78rem}
+        .rev-quote{position:absolute;top:16px;right:22px;font-size:2.5rem;color:rgba(201,169,110,.15);font-family:Georgia,serif}
+
+        /* FAQ */
+        .faq-section{background:var(--black2);padding:80px 50px}
+        .faq-wrap{max-width:900px;margin:0 auto}
+        .faq-item{border-bottom:1px solid rgba(201,169,110,.1);overflow:hidden}
+        .faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;color:#fff;font-size:1rem;font-weight:500;transition:color .3s}
+        .faq-q:hover{color:var(--gold)}
+        .faq-q .faq-icon{font-size:1.3rem;color:var(--gold);transition:transform .3s;flex-shrink:0;margin-left:16px}
+        .faq-item.open .faq-icon{transform:rotate(45deg)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;padding:0 0}
+        .faq-item.open .faq-a{max-height:300px;padding:0 0 22px 0}
+        .faq-a p{color:var(--gray);font-size:.88rem;line-height:1.8;margin:0}
+
         /* SHIPPING & CERT (side by side) */
         .ship-cert{background:var(--black2);padding:80px 50px}
         .sc-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px}
@@ -160,6 +184,7 @@
             .stats-inner{grid-template-columns:repeat(2,1fr)}
             .footer-inner{grid-template-columns:repeat(2,1fr)}
             .cli-grid{grid-template-columns:repeat(2,1fr)}
+            .rev-grid{grid-template-columns:repeat(2,1fr)}
             .sc-wrap{grid-template-columns:1fr}
         }
         @media(max-width:768px){
@@ -175,6 +200,7 @@
             .fac-grid{grid-template-columns:1fr}
             .fac-grid .g-item:first-child{grid-column:span 1}
             .cli-grid{grid-template-columns:1fr}
+            .rev-grid{grid-template-columns:1fr}
             .cat-bar{gap:4px}.cat-btn{padding:7px 14px;font-size:.65rem}
             .c-row{grid-template-columns:1fr}
             .ship-cert{padding:56px 18px}
@@ -480,6 +506,113 @@
     </div>
 </section>
 
+<!-- CLIENT REVIEWS -->
+<section class="reviews">
+    <div class="sec-head">
+        <div class="sec-tag">Client Reviews</div>
+        <h2 class="sec-title">What Our Clients <span style="color:var(--gold)">Say</span></h2>
+        <p class="sec-desc">Real feedback from clubs, distributors and wholesalers who trust Sundays for their billiard tables.</p>
+    </div>
+    <div class="rev-grid">
+        <div class="rev-card">
+            <div class="rev-quote">&ldquo;</div>
+            <div class="rev-stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <div class="rev-text">We ordered 30 snooker tables for our club chain. The slate quality is exceptional &mdash; perfectly leveled and consistent across every table. Sundays handled the bulk order flawlessly, delivered on time, and even helped with custom logo engraving. Highly recommended for commercial projects.</div>
+            <div class="rev-author">
+                <div class="rev-avatar">DM</div>
+                <div><div class="rev-name">David Mitchell</div><div class="rev-country">&#127468;&#127463; United Kingdom</div></div>
+            </div>
+        </div>
+        <div class="rev-card">
+            <div class="rev-quote">&ldquo;</div>
+            <div class="rev-stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <div class="rev-text">As a distributor, I&rsquo;ve worked with many factories. Sundays stands out &mdash; their build quality is on par with European brands at half the cost. The solid wood craftsmanship on their Gold Armor series is remarkable. Already placed our third repeat order.</div>
+            <div class="rev-author">
+                <div class="rev-avatar">JV</div>
+                <div><div class="rev-name">Jean-Pierre Vasquez</div><div class="rev-country">&#127466;&#127480; Spain</div></div>
+            </div>
+        </div>
+        <div class="rev-card">
+            <div class="rev-quote">&ldquo;</div>
+            <div class="rev-stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <div class="rev-text">The coin-operated tables we purchased are built like tanks &mdash; heavy-duty, smooth ball return, and the felt quality is excellent. Our entertainment venues have been running them for 2 years with zero maintenance issues. Factory communication was professional throughout.</div>
+            <div class="rev-author">
+                <div class="rev-avatar">AO</div>
+                <div><div class="rev-name">Ahmed Osman</div><div class="rev-country">&#127462;&#127466; UAE</div></div>
+            </div>
+        </div>
+        <div class="rev-card">
+            <div class="rev-quote">&ldquo;</div>
+            <div class="rev-stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <div class="rev-text">We needed custom-colored pool tables for a hotel project. Sundays matched our RAL color samples perfectly and delivered 15 tables within 45 days. The packaging was impeccable &mdash; not a single scratch after a 40-day sea shipment. Outstanding service from Annie&rsquo;s team.</div>
+            <div class="rev-author">
+                <div class="rev-avatar">SK</div>
+                <div><div class="rev-name">Samuel Kofi</div><div class="rev-country">&#127468;&#127469; Ghana</div></div>
+            </div>
+        </div>
+        <div class="rev-card">
+            <div class="rev-quote">&ldquo;</div>
+            <div class="rev-stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <div class="rev-text">The SDAiS Platinum billiard balls are a game-changer. Perfect roundness, consistent weight, and the colors stay vibrant even after months of heavy use. We&rsquo;ve now switched our entire stock to SDAiS. Great value compared to Belgian brands.</div>
+            <div class="rev-author">
+                <div class="rev-avatar">RN</div>
+                <div><div class="rev-name">Roberto Nascimento</div><div class="rev-country">&#127463;&#127479; Brazil</div></div>
+            </div>
+        </div>
+        <div class="rev-card">
+            <div class="rev-quote">&ldquo;</div>
+            <div class="rev-stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <div class="rev-text">Visited the Sundays factory in Guangzhou &mdash; truly impressive. 8,000 m&sup2; facility with modern equipment and strict quality control. Ordered a full container of multi-function tables for our Australian market. ISO and SGS certified, exactly what our importers require.</div>
+            <div class="rev-author">
+                <div class="rev-avatar">MC</div>
+                <div><div class="rev-name">Michael Chen</div><div class="rev-country">&#127462;&#127482; Australia</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="sec-head">
+        <div class="sec-tag">FAQ</div>
+        <h2 class="sec-title">Frequently Asked <span style="color:var(--gold)">Questions</span></h2>
+    </div>
+    <div class="faq-wrap">
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is the MOQ (Minimum Order Quantity)?<span class="faq-icon">+</span></div>
+            <div class="faq-a"><p>Our standard MOQ is 1 set for sample orders. For bulk production orders, we recommend a minimum of 5 sets per model to optimize shipping costs. Mixed models are welcome in the same container.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What materials are your billiard tables made of?<span class="faq-icon">+</span></div>
+            <div class="faq-a"><p>We use premium solid hardwood (ash, oak, mahogany) for frames and legs, natural slate from Brazil or China (25mm&ndash;50mm thickness) for playing surfaces, and tournament-grade wool/nylon blend cloth. All hardware is stainless steel or heavy-duty zinc alloy.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Can you customize tables with our brand logo and colors?<span class="faq-icon">+</span></div>
+            <div class="faq-a"><p>Absolutely! We offer full OEM/ODM customization including custom wood finishes (RAL color matching), logo engraving on rails and legs, branded cloth printing, and custom packaging with your brand identity. Send us your design brief and we&rsquo;ll provide a free mockup.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is the production lead time?<span class="faq-icon">+</span></div>
+            <div class="faq-a"><p>Standard models: 15&ndash;25 days. Customized orders: 30&ndash;45 days depending on complexity. Sample orders can be expedited to 7&ndash;10 days. We provide weekly production progress photos and updates.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How do you handle shipping and packaging?<span class="faq-icon">+</span></div>
+            <div class="faq-a"><p>Tables are disassembled and packed with multi-layer protection: EPE foam wrapping, reinforced cardboard, corner protectors, and wooden crating for slate. We support FOB Guangzhou, CIF, and door-to-door delivery. A 40ft container fits approximately 16&ndash;20 standard pool tables.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Do you have quality certifications?<span class="faq-icon">+</span></div>
+            <div class="faq-a"><p>Yes. Our factory holds ISO 9001:2015 quality management certification, SGS inspection reports, SMETA ethical trade audit, and OEKO-TEX 100 certification for cloth materials. We welcome third-party inspections and factory audits.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is your warranty and after-sales policy?<span class="faq-icon">+</span></div>
+            <div class="faq-a"><p>We offer a 3-year warranty on frame and slate, 1-year warranty on cloth and accessories. Spare parts are available for purchase at any time. Our after-sales team responds within 24 hours and provides video guidance for installation and maintenance.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Can I visit your factory before placing an order?<span class="faq-icon">+</span></div>
+            <div class="faq-a"><p>Of course! We welcome factory visits and can arrange pickup from Guangzhou Baiyun Airport or Guangzhou South Railway Station. Our 8,000 m&sup2; showroom displays over 50 table models. Contact us to schedule a visit &mdash; we host international buyers regularly.</p></div>
+        </div>
+    </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
     <div class="footer-inner">
@@ -562,6 +695,9 @@ function filterCat(cat,btn){
     <span class="wa-tooltip">Chat on WhatsApp</span>
 </a>
 <script>
+// FAQ TOGGLE
+function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+
 // WHATSAPP FLOAT - bounce around screen like screensaver
 var waBtn=document.getElementById('waFloat');
 var waX=window.innerWidth-100, waY=window.innerHeight-100;
