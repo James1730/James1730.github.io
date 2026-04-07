@@ -24,7 +24,11 @@
 
         /* NAV */
         .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 50px;display:flex;align-items:center;justify-content:space-between;transition:var(--ease)}
-        .nav.scrolled{background:rgba(9,9,9,.96);backdrop-filter:blur(20px);padding:14px 50px;border-bottom:1px solid rgba(201,169,110,.1)}
+        .nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:14px 50px;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+        .nav.scrolled .nav-links a{color:#111}
+        .nav.scrolled .nav-links a:hover{color:var(--gold)}
+        .nav.scrolled .nav-cta{border-color:#111!important;color:#111!important}
+        .nav.scrolled .nav-cta:hover{background:#111!important;color:#fff!important}
         .nav-logo img{height:60px;transition:var(--ease)}
         .nav.scrolled .nav-logo img{height:46px}
         .nav-links{display:flex;gap:32px;align-items:center}
