@@ -71,6 +71,7 @@
         .bs-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
         .bs-item{overflow:hidden;border-radius:3px;position:relative}
         .bs-item img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .5s ease;filter:brightness(.9)}
+        .bs-item.bs-zoomout img{object-fit:contain;background:#111;padding:8%}
         .bs-item:hover img{transform:scale(1.05);filter:brightness(1)}
         .bs-label{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);font-family:var(--ff-h);font-size:.9rem;color:var(--white);letter-spacing:1px}
 
@@ -273,7 +274,7 @@
     </div>
     <div class="bs-grid">
         <div class="bs-item" onclick="openLB(this)"><img src="https://sc02.alicdn.com/kf/A5f9ebfe00b9b4b7080ed6893b0cd509cC.png" alt="Professional Snooker Table"><div class="bs-label">Professional Club Snooker</div></div>
-        <div class="bs-item" onclick="openLB(this)"><img src="https://sc02.alicdn.com/kf/A92fc751f4e464294a04330ee2f2f6f4d8.png" alt="Sundays Tournament Table"><div class="bs-label">Tournament Pool Table</div></div>
+        <div class="bs-item bs-zoomout" onclick="openLB(this)"><img src="https://sc02.alicdn.com/kf/A92fc751f4e464294a04330ee2f2f6f4d8.png" alt="Sundays Tournament Table"><div class="bs-label">Tournament Pool Table</div></div>
         <div class="bs-item" onclick="openLB(this)"><img src="https://sc02.alicdn.com/kf/Adcc83ac77a6f432dacc30a79a1409bb5g.png" alt="Sundays Competition Table"><div class="bs-label">Competition Series</div></div>
         <div class="bs-item" onclick="openLB(this)"><img src="https://sc02.alicdn.com/kf/A7b87430db0134c1381374e32c930e386D.png" alt="Classic Gold-Leg Snooker"><div class="bs-label">Classic Gold-Leg Snooker</div></div>
     </div>
