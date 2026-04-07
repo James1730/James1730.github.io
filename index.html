@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sundays | Premium Billiard Table Manufacturer</title>
+    <meta name="description" content="Sundays - Professional billiard table manufacturer since 2005. Premium pool tables, snooker tables, coin-operated tables & accessories. OEM/ODM. ISO 9001. 252+ products.">
+    <link rel="icon" type="image/png" href="https://sc02.alicdn.com/kf/A266d87002c594a26b5fee969b9f02ec4A.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --gold:#C9A96E;--gold-light:#D4B87A;--gold-dark:#A68B5B;
+            --black:#090909;--black2:#111;--black3:#181818;--black4:#222;
+            --gray:#888;--gray-light:#bbb;--white:#f0f0f0;
+            --ff-h:'Playfair Display',serif;--ff-b:'Inter',sans-serif;
+            --ease:all .4s cubic-bezier(.25,.46,.45,.94);
+        }
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:var(--ff-b);background:var(--black);color:var(--white);line-height:1.6;overflow-x:hidden}
+        img{max-width:100%;display:block}
+        a{text-decoration:none;color:inherit}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 50px;display:flex;align-items:center;justify-content:space-between;transition:var(--ease)}
+        .nav.scrolled{background:rgba(9,9,9,.96);backdrop-filter:blur(20px);padding:14px 50px;border-bottom:1px solid rgba(201,169,110,.1)}
+        .nav-logo img{height:42px;transition:var(--ease)}
+        .nav.scrolled .nav-logo img{height:32px}
+        .nav-links{display:flex;gap:32px;align-items:center}
+        .nav-links a{font-size:.78rem;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray-light);transition:var(--ease)}
+        .nav-links a:hover{color:var(--gold)}
+        .nav-cta{padding:10px 26px!important;border:1px solid var(--gold)!important;color:var(--gold)!important;transition:var(--ease)!important}
+        .nav-cta:hover{background:var(--gold)!important;color:var(--black)!important}
+        .hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px;z-index:102}
+        .hamburger span{width:24px;height:1.5px;background:var(--gold);transition:var(--ease)}
+
+        /* HERO */
+        .hero{position:relative;height:100vh;min-height:650px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;background:url('https://sc02.alicdn.com/kf/Ad860b956a96a46eb923d785c2789d40c1.png') center/cover no-repeat}
+        .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(9,9,9,.55),rgba(9,9,9,.35) 40%,rgba(9,9,9,.75))}
+        .hero-content{position:relative;z-index:2;text-align:center;max-width:860px;padding:0 20px}
+        .hero-badge{display:inline-block;padding:7px 22px;border:1px solid rgba(201,169,110,.35);font-size:.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;animation:fadeUp 1s ease .3s both}
+        .hero h1{font-family:var(--ff-h);font-size:clamp(2.4rem,5.5vw,4.5rem);font-weight:600;line-height:1.1;margin-bottom:18px;animation:fadeUp 1s ease .5s both}
+        .hero h1 em{font-style:normal;color:var(--gold)}
+        .hero-sub{font-size:clamp(1rem,1.8vw,1.15rem);font-weight:300;color:var(--gray-light);margin-bottom:36px;line-height:1.8;animation:fadeUp 1s ease .7s both}
+        .hero-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s ease .9s both}
+        .btn{display:inline-block;padding:15px 40px;font-family:var(--ff-b);font-size:.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:var(--ease);border:none}
+        .btn-gold{background:var(--gold);color:var(--black)}
+        .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 35px rgba(201,169,110,.3)}
+        .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
+        .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+        .scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--gray);font-size:.65rem;letter-spacing:2px}
+        .scroll-hint .line{width:1px;height:36px;background:var(--gold);animation:pulse-line 2s ease infinite}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes pulse-line{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+        /* STATS */
+        .stats{padding:48px 50px;border-top:1px solid rgba(201,169,110,.12);border-bottom:1px solid rgba(201,169,110,.12);background:var(--black2)}
+        .stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+        .stat-n{font-family:var(--ff-h);font-size:2.6rem;font-weight:700;color:var(--gold);line-height:1}
+        .stat-l{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:6px}
+
+        /* SECTIONS */
+        .sec{padding:100px 50px}
+        .sec-head{text-align:center;margin-bottom:50px}
+        .sec-tag{font-size:.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+        .sec-title{font-family:var(--ff-h);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;line-height:1.2;margin-bottom:16px}
+        .sec-desc{font-size:1rem;font-weight:300;color:var(--gray);max-width:600px;margin:0 auto;line-height:1.8}
+        .gold-bar{width:50px;height:2px;background:var(--gold);margin:18px auto 0}
+
+        /* ABOUT */
+        .about{background:var(--black)}
+        .about-wrap{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+        .about-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .about-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:3px;transition:var(--ease)}
+        .about-mosaic img:first-child{grid-row:span 2;min-height:380px}
+        .about-mosaic img:nth-child(2),.about-mosaic img:nth-child(3){aspect-ratio:4/3}
+        .about-mosaic img:hover{filter:brightness(1.1);transform:scale(1.02)}
+        .about-text h3{font-family:var(--ff-h);font-size:1.4rem;color:var(--gold);margin-bottom:18px}
+        .about-text p{color:var(--gray-light);font-size:.92rem;line-height:1.9;margin-bottom:14px}
+        .about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+        .about-tag{padding:8px 18px;border:1px solid rgba(201,169,110,.25);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+
+        /* PRODUCTS CATALOG */
+        .catalog{background:var(--black2)}
+        .cat-bar{display:flex;justify-content:center;gap:6px;margin-bottom:36px;flex-wrap:wrap;max-width:1200px;margin-left:auto;margin-right:auto}
+        .cat-btn{padding:9px 22px;border:1px solid rgba(201,169,110,.2);background:transparent;color:var(--gray-light);font-family:var(--ff-b);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:var(--ease);white-space:nowrap}
+        .cat-btn:hover,.cat-btn.active{background:var(--gold);color:var(--black);border-color:var(--gold)}
+        .cat-count{font-size:.6rem;opacity:.7;margin-left:4px}
+        #catalogGrid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+        .p-card{background:var(--black3);border:1px solid rgba(201,169,110,.06);overflow:hidden;transition:var(--ease);cursor:pointer;text-decoration:none;color:inherit;display:block}
+        .p-card:hover{border-color:rgba(201,169,110,.22);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+        .p-img{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--black4)}
+        .p-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+        .p-card:hover .p-img img{transform:scale(1.06)}
+        .p-body{padding:16px 18px}
+        .p-body h3{font-size:.82rem;font-weight:500;line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.3em}
+        .p-price{font-family:var(--ff-h);font-size:1rem;font-weight:600;color:var(--gold)}
+        .p-moq{font-size:.68rem;color:var(--gray);margin-top:2px}
+        .load-more-wrap{text-align:center;margin-top:40px}
+        #loadMoreBtn{padding:14px 50px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-family:var(--ff-b);font-size:.78rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:var(--ease)}
+        #loadMoreBtn:hover{background:var(--gold);color:var(--black)}
+        #productCount{text-align:center;margin-bottom:20px;font-size:.78rem;color:var(--gray);letter-spacing:1px}
+
+        /* GALLERY TABS */
+        .gallery{background:var(--black)}
+        .tab-bar{display:flex;justify-content:center;gap:6px;margin-bottom:40px;flex-wrap:wrap}
+        .tab-btn{padding:10px 28px;border:1px solid rgba(201,169,110,.2);background:transparent;color:var(--gray-light);font-family:var(--ff-b);font-size:.76rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:var(--ease)}
+        .tab-btn:hover,.tab-btn.active{background:var(--gold);color:var(--black);border-color:var(--gold)}
+        .tab-panel{display:none;max-width:1200px;margin:0 auto}
+        .tab-panel.active{display:block}
+        .gallery-grid{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+        .g-item{overflow:hidden;border-radius:3px;position:relative;cursor:pointer}
+        .g-item img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s ease,filter .5s ease;filter:brightness(.85)}
+        .g-item:hover img{transform:scale(1.05);filter:brightness(1)}
+        .g-caption{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);font-size:.75rem;color:var(--white);letter-spacing:1px;opacity:0;transition:var(--ease)}
+        .g-item:hover .g-caption{opacity:1}
+
+        /* CONTACT */
+        .contact{background:var(--black2)}
+        .contact-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px}
+        .c-block{margin-bottom:28px}
+        .c-block h4{font-family:var(--ff-h);font-size:1rem;color:var(--gold);margin-bottom:10px}
+        .c-block p,.c-block a{font-size:.88rem;color:var(--gray-light);line-height:1.8}
+        .c-block a:hover{color:var(--gold)}
+        .c-block i{color:var(--gold);width:20px;margin-right:8px}
+        .c-form{display:flex;flex-direction:column;gap:16px}
+        .c-form input,.c-form textarea,.c-form select{width:100%;background:var(--black);border:1px solid rgba(201,169,110,.18);color:var(--white);padding:14px 18px;font-family:var(--ff-b);font-size:.88rem;outline:none;transition:var(--ease)}
+        .c-form input:focus,.c-form textarea:focus,.c-form select:focus{border-color:var(--gold)}
+        .c-form textarea{resize:vertical;min-height:110px}
+        .c-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+        /* FOOTER */
+        .footer{border-top:1px solid rgba(201,169,110,.1);padding:50px 50px 24px;background:var(--black)}
+        .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+        .footer-brand p{color:var(--gray);font-size:.82rem;line-height:1.8;margin-top:14px}
+        .footer-col h4{font-family:var(--ff-h);font-size:.95rem;color:var(--gold);margin-bottom:16px}
+        .footer-col a{display:block;font-size:.82rem;color:var(--gray);margin-bottom:8px;transition:var(--ease)}
+        .footer-col a:hover{color:var(--gold);padding-left:4px}
+        .f-social{display:flex;gap:12px;margin-top:18px}
+        .f-social a{width:38px;height:38px;border:1px solid rgba(201,169,110,.25);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.85rem;transition:var(--ease)}
+        .f-social a:hover{background:var(--gold);color:var(--black)}
+        .footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(201,169,110,.08);font-size:.72rem;color:#555}
+
+        /* LIGHTBOX */
+        .lb{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center;cursor:pointer}
+        .lb.show{display:flex}
+        .lb img{max-width:92%;max-height:90vh;object-fit:contain}
+        .lb-x{position:absolute;top:24px;right:28px;color:#fff;font-size:1.8rem;cursor:pointer}
+
+        /* REVEAL */
+        .rv{opacity:0;transform:translateY(35px);transition:opacity .7s ease,transform .7s ease}
+        .rv.on{opacity:1;transform:translateY(0)}
+
+        /* RESPONSIVE */
+        @media(max-width:1024px){
+            .nav{padding:14px 28px}.sec{padding:70px 28px}
+            #catalogGrid{grid-template-columns:repeat(3,1fr)}
+            .about-wrap{grid-template-columns:1fr;gap:36px}
+            .stats-inner{grid-template-columns:repeat(2,1fr)}
+            .footer-inner{grid-template-columns:repeat(2,1fr)}
+            .gallery-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(max-width:768px){
+            .nav{padding:12px 20px}
+            .nav-links{position:fixed;top:0;right:-100%;width:80%;height:100vh;background:var(--black2);flex-direction:column;justify-content:center;gap:28px;transition:right .4s ease;z-index:101}
+            .nav-links.open{right:0}
+            .hamburger{display:flex}
+            .sec{padding:56px 18px}.hero{min-height:560px}
+            #catalogGrid{grid-template-columns:repeat(2,1fr);gap:12px}
+            .contact-wrap{grid-template-columns:1fr;gap:36px}
+            .stats-inner{grid-template-columns:repeat(2,1fr);gap:20px}
+            .footer-inner{grid-template-columns:1fr;gap:24px}
+            .gallery-grid{grid-template-columns:1fr 1fr}
+            .cat-bar{gap:4px}.cat-btn{padding:7px 14px;font-size:.65rem}
+            .c-row{grid-template-columns:1fr}
+        }
+        @media(max-width:480px){
+            #catalogGrid{grid-template-columns:1fr 1fr;gap:10px}
+            .p-body{padding:12px 14px}
+            .p-body h3{font-size:.75rem}
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+    <a href="#" class="nav-logo"><img src="https://sc02.alicdn.com/kf/A266d87002c594a26b5fee969b9f02ec4A.png" alt="Sundays"></a>
+    <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="nav-cta">Get Quote</a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">Guangzhou, China &bull; Est. 2005</div>
+        <h1>Crafting <em>Premium</em><br>Billiard Tables</h1>
+        <p class="hero-sub">Professional manufacturer of pool tables, snooker tables &amp; billiard accessories.<br>OEM / ODM welcome &bull; ISO 9001 certified factory.</p>
+        <div class="hero-btns">
+            <a href="#products" class="btn btn-gold">Explore 252+ Products</a>
+            <a href="#contact" class="btn btn-ghost">Request Quote</a>
+        </div>
+    </div>
+    <div class="scroll-hint">SCROLL<div class="line"></div></div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="stats-inner">
+        <div class="rv"><div class="stat-n">19+</div><div class="stat-l">Years Experience</div></div>
+        <div class="rv"><div class="stat-n">50+</div><div class="stat-l">Countries Exported</div></div>
+        <div class="rv"><div class="stat-n">10,000+</div><div class="stat-l">Tables Per Year</div></div>
+        <div class="rv"><div class="stat-n">8,000</div><div class="stat-l">m&sup2; Factory</div></div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec about" id="about">
+    <div class="sec-head rv">
+        <div class="sec-tag">About Sundays</div>
+        <h2 class="sec-title">Where Craftsmanship Meets Precision</h2>
+        <div class="gold-bar"></div>
+    </div>
+    <div class="about-wrap">
+        <div class="about-mosaic rv">
+            <img src="https://sc01.alicdn.com/kf/Ade4831d8ee1845ca86b5eb8491ca3473k.jpg" alt="Sundays factory">
+            <img src="https://sc01.alicdn.com/kf/Ae2ce9f6730e34df1be7a200e9079f2aer.jpg" alt="Hand-carved legs">
+            <img src="https://sc01.alicdn.com/kf/Ad6d5de3d092849329a1332dfee5d091fg.jpg" alt="Gold-finish legs">
+        </div>
+        <div class="about-text rv">
+            <h3>A Legacy of Billiard Excellence</h3>
+            <p>Founded in 2005, <strong>Sundays (SDAiS)</strong> has grown into one of Guangzhou's leading billiard table manufacturers, serving clubs, distributors, and sports venues across 50+ countries.</p>
+            <p>Our 8,000 m&sup2; factory combines traditional woodworking craftsmanship with modern CNC precision. Every table features hand-selected solid hardwood, Italian slate beds, and championship-grade cloth.</p>
+            <p>From American pool tables to full-size snooker tables, coin-operated commercial units to bespoke luxury designs &mdash; we deliver complete solutions including accessories and branded packaging.</p>
+            <div class="about-tags">
+                <span class="about-tag">ISO 9001</span>
+                <span class="about-tag">SGS</span>
+                <span class="about-tag">SMETA</span>
+                <span class="about-tag">OEKO-TEX 100</span>
+                <span class="about-tag">OEM / ODM</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS CATALOG -->
+<section class="sec catalog" id="products">
+    <div class="sec-head rv">
+        <div class="sec-tag">Product Catalog</div>
+        <h2 class="sec-title">252+ Products, 9 Categories</h2>
+        <p class="sec-desc">Browse our complete range. Click any product for details on Alibaba.</p>
+        <div class="gold-bar"></div>
+    </div>
+    <div class="cat-bar rv" id="catBar"></div>
+    <div id="productCount"></div>
+    <div id="catalogGrid"></div>
+    <div class="load-more-wrap"><button id="loadMoreBtn" style="display:none" onclick="loadMore()">Load More Products</button></div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec gallery" id="gallery">
+    <div class="sec-head rv">
+        <div class="sec-tag">Gallery</div>
+        <h2 class="sec-title">See Our World</h2>
+        <div class="gold-bar"></div>
+    </div>
+    <div class="tab-bar rv">
+        <button class="tab-btn active" data-tab="factory">Factory</button>
+        <button class="tab-btn" data-tab="clients">Client Visits</button>
+        <button class="tab-btn" data-tab="showroom">Showroom</button>
+    </div>
+    <div class="tab-panel active" id="tab-factory">
+        <div class="gallery-grid">
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/Ade4831d8ee1845ca86b5eb8491ca3473k.jpg" alt="Factory warehouse"><div class="g-caption">8,000 m&sup2; Factory</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/A765c3195d88a45cfabc9f3e3d37008f3H.jpg" alt="Table legs production"><div class="g-caption">Mass Production</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/Ae2ce9f6730e34df1be7a200e9079f2aer.jpg" alt="Carved legs"><div class="g-caption">Hand-Carved Legs</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/Ad6d5de3d092849329a1332dfee5d091fg.jpg" alt="Gold legs"><div class="g-caption">Gold-Finish Production</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/Abdeff5b516d14d498e0226a162873b6eF.jpg" alt="Multi-color legs"><div class="g-caption">Multi-Color Options</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/A56fbe0d1f4d841af80ab810d939cf72fB.jpg" alt="Container loading"><div class="g-caption">Container Loading</div></div>
+        </div>
+    </div>
+    <div class="tab-panel" id="tab-clients">
+        <div class="gallery-grid">
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/Aefbe4bcde4fe4c778a87c708c9675278G.jpg" alt="Client visit" style="aspect-ratio:3/4"><div class="g-caption">Client Visit &mdash; Showroom Tour</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/Ad802dcb096c64bff8471d7df0738a159k.jpg" alt="European clients" style="aspect-ratio:3/4"><div class="g-caption">European Partners</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc01.alicdn.com/kf/A7af5f9ef9d9c424cb0942cf044c83a51S.jpg" alt="Business meeting" style="aspect-ratio:3/4"><div class="g-caption">Business Discussion</div></div>
+        </div>
+    </div>
+    <div class="tab-panel" id="tab-showroom">
+        <div class="gallery-grid">
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc02.alicdn.com/kf/Aaa22afda9cba4a0e98f00c5d3f5b3dd8w.png" alt="Black Warrior"><div class="g-caption">Black Warrior Series</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc02.alicdn.com/kf/A6b8e232ceed741dea0336401b185295bF.png" alt="Orange felt"><div class="g-caption">Custom Orange Felt</div></div>
+            <div class="g-item" onclick="openLB(this)"><img src="https://sc02.alicdn.com/kf/A7000f11a99314930acf5a97a89f6362cL.png" alt="Golden Armor"><div class="g-caption">Golden Armor Series</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+    <div class="sec-head rv">
+        <div class="sec-tag">Get In Touch</div>
+        <h2 class="sec-title">Start Your Order Today</h2>
+        <p class="sec-desc">1 table or 1,000 &mdash; competitive quote within 24 hours.</p>
+        <div class="gold-bar"></div>
+    </div>
+    <div class="contact-wrap">
+        <div class="rv">
+            <div class="c-block"><h4>Factory Address</h4><p><i class="fas fa-map-marker-alt"></i>Guangzhou, Guangdong, China</p></div>
+            <div class="c-block"><h4>WhatsApp</h4><p><a href="https://wa.me/8618824156040" target="_blank"><i class="fab fa-whatsapp"></i>+86 188 2415 6040</a></p></div>
+            <div class="c-block"><h4>Email</h4><p><a href="mailto:sundaysbilliard@hotmail.com"><i class="fas fa-envelope"></i>sundaysbilliard@hotmail.com</a></p></div>
+            <div class="c-block"><h4>Alibaba Store</h4><p><a href="https://gzsundays.en.alibaba.com/" target="_blank"><i class="fas fa-store"></i>gzsundays.en.alibaba.com</a></p></div>
+            <div class="c-block"><h4>Business Hours</h4><p><i class="fas fa-clock"></i>Mon &ndash; Sat: 9:00 AM &ndash; 6:00 PM (GMT+8)</p></div>
+        </div>
+        <form class="c-form rv" onsubmit="submitForm(event)">
+            <div class="c-row"><input type="text" placeholder="Your Name *" required><input type="email" placeholder="Email *" required></div>
+            <div class="c-row"><input type="text" placeholder="Company"><input type="tel" placeholder="Phone / WhatsApp"></div>
+            <select><option value="" disabled selected>Product Interest</option><option>Pool Tables</option><option>Snooker Tables</option><option>Coin-Operated Tables</option><option>Multi-function Tables</option><option>Glass Pool Tables</option><option>MDF Pool Tables</option><option>Billiard Accessories</option><option>Complete Club Setup</option><option>OEM / ODM Project</option></select>
+            <textarea placeholder="Requirements: quantity, specs, destination country..." rows="4"></textarea>
+            <button type="submit" class="btn btn-gold" style="width:100%">Send Inquiry</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="https://sc02.alicdn.com/kf/A266d87002c594a26b5fee969b9f02ec4A.png" alt="Sundays" style="height:36px">
+            <p>Professional billiard table manufacturer based in Guangzhou, China. Serving the global market since 2005.</p>
+            <div class="f-social">
+                <a href="https://wa.me/8618824156040" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/sundaysbilliard" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://gzsundays.en.alibaba.com/" target="_blank"><i class="fas fa-store"></i></a>
+                <a href="mailto:sundaysbilliard@hotmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-col"><h4>Products</h4><a href="#products">Pool Tables</a><a href="#products">Snooker Tables</a><a href="#products">Coin-Operated</a><a href="#products">Accessories</a></div>
+        <div class="footer-col"><h4>Company</h4><a href="#about">About Us</a><a href="#gallery">Factory Tour</a><a href="#gallery">Client Visits</a><a href="#contact">Contact</a></div>
+        <div class="footer-col"><h4>Services</h4><a href="#contact">OEM Manufacturing</a><a href="#contact">ODM Design</a><a href="#contact">Custom Branding</a><a href="#contact">Club Setup</a></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Sundays Billiard Tables. All Rights Reserved. Guangzhou Wanjin Sports Equipment Co., Ltd.</div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLB()"><span class="lb-x">&times;</span><img id="lbImg" src="" alt=""></div>
+
+<!-- PRODUCT DATA -->
+<script src="products-data.js"></script>
+
+<script>
+// ── NAV ──
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>60));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+// ── REVEAL ──
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// ── GALLERY TABS ──
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+    });
+});
+
+// ── LIGHTBOX ──
+function openLB(el){const img=el.querySelector('img');document.getElementById('lbImg').src=img.src;document.getElementById('lb').classList.add('show');document.body.style.overflow='hidden'}
+function closeLB(){document.getElementById('lb').classList.remove('show');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB()});
+
+// ── FORM ──
+function submitForm(e){
+    e.preventDefault();let msg='Hello Sundays! I am interested in your billiard products.\n\n';
+    e.target.querySelectorAll('input,textarea,select').forEach(i=>{if(i.value)msg+=(i.placeholder||i.options?.[i.selectedIndex]?.text||'')+': '+i.value+'\n'});
+    window.open('https://wa.me/8618824156040?text='+encodeURIComponent(msg),'_blank');
+}
+
+// ── COUNTER ──
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){const el=e.target,txt=el.textContent,n=parseInt(txt.replace(/[^0-9]/g,'')),sfx=txt.replace(/[0-9,]/g,'');
+    let c=0;const inc=Math.ceil(n/50),t=setInterval(()=>{c+=inc;if(c>=n){c=n;clearInterval(t)}el.textContent=c.toLocaleString()+sfx},25);cio.unobserve(el)}
+}),{threshold:.5});
+document.querySelectorAll('.stat-n').forEach(c=>cio.observe(c));
+
+// ── PRODUCT CATALOG ──
+const ITEMS_PER_PAGE = 24;
+let currentCat = 'all';
+let displayedCount = 0;
+let currentProducts = [];
+
+// Category display order
+const CAT_ORDER = [
+    'Pool Table', 'Snooker Table', 'Multi-function Pool Table',
+    'Coin Operated Pool Table', 'Chinese Billiard Table',
+    'Customized Billiard Table', 'Glass Pool Table', 'MDF Pool Table',
+    'Billiard Accessories'
+];
+
+function getAllProducts(){
+    let all = [];
+    CAT_ORDER.forEach(cat => { if(PRODUCTS[cat]) all = all.concat(PRODUCTS[cat]); });
+    return all;
+}
+
+function initCatalog(){
+    const bar = document.getElementById('catBar');
+    const allCount = getAllProducts().length;
+    let html = '<button class="cat-btn active" data-cat="all">All<span class="cat-count">'+allCount+'</span></button>';
+    CAT_ORDER.forEach(cat => {
+        if(PRODUCTS[cat] && PRODUCTS[cat].length > 0){
+            html += '<button class="cat-btn" data-cat="'+cat+'">'+cat+'<span class="cat-count">'+PRODUCTS[cat].length+'</span></button>';
+        }
+    });
+    bar.innerHTML = html;
+    bar.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            bar.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            displayedCount = 0;
+            renderProducts();
+        });
+    });
+    renderProducts();
+}
+
+function renderProducts(){
+    currentProducts = currentCat === 'all' ? getAllProducts() : (PRODUCTS[currentCat] || []);
+    const grid = document.getElementById('catalogGrid');
+    const end = Math.min(displayedCount + ITEMS_PER_PAGE, currentProducts.length);
+    
+    if(displayedCount === 0) grid.innerHTML = '';
+    
+    for(let i = displayedCount; i < end; i++){
+        const p = currentProducts[i];
+        const card = document.createElement('a');
+        card.className = 'p-card';
+        card.href = p.url;
+        card.target = '_blank';
+        card.rel = 'noopener';
+        card.innerHTML = '<div class="p-img"><img src="'+p.image+'" alt="'+escHtml(p.name)+'" loading="lazy" onerror="this.src=\'https://sc02.alicdn.com/kf/A266d87002c594a26b5fee969b9f02ec4A.png\'"></div><div class="p-body"><h3>'+escHtml(p.name)+'</h3><div class="p-price">'+escHtml(p.price)+'</div><div class="p-moq">Min. order: 1 set</div></div>';
+        grid.appendChild(card);
+    }
+    displayedCount = end;
+    
+    document.getElementById('productCount').textContent = 'Showing '+displayedCount+' of '+currentProducts.length+' products';
+    document.getElementById('loadMoreBtn').style.display = displayedCount < currentProducts.length ? 'inline-block' : 'none';
+}
+
+function loadMore(){ renderProducts(); }
+function escHtml(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+// Initialize
+if(typeof PRODUCTS !== 'undefined') initCatalog();
+</script>
+
+</body>
+</html>
