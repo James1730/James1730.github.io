@@ -204,12 +204,18 @@
     <div class="slides" id="slides">
         <div class="slide"><img src="https://sc02.alicdn.com/kf/A4b49cca6d2d748088fff7946bfc9c3feZ.png" alt="Customized Pool Table"></div>
         <div class="slide"><img src="https://sc02.alicdn.com/kf/A7b287a1b380c4247b7982aeb7dd217b7c.png" alt="SDAiS Platinum Billiard Balls"></div>
+        <div class="slide"><img src="https://sc02.alicdn.com/kf/Ab6bef6b51420430cb34202b7ac6efea7H.png" alt="Generation 4 Pool Table - Blue"></div>
+        <div class="slide"><img src="https://sc02.alicdn.com/kf/Aac9764b0571e4213be5d0b545fa0c99cR.png" alt="Generation 4 Pool Table - Gray"></div>
+        <div class="slide"><img src="https://sc02.alicdn.com/kf/A1ced8e8c98e743cf886a88531be3add5U.png" alt="Customized Pool Table - 8ft 9ft"></div>
     </div>
     <button class="slider-btn slider-prev" onclick="slideMove(-1)"><i class="fas fa-chevron-left"></i></button>
     <button class="slider-btn slider-next" onclick="slideMove(1)"><i class="fas fa-chevron-right"></i></button>
     <div class="slider-dots" id="sliderDots">
         <span class="slider-dot active" onclick="slideTo(0)"></span>
         <span class="slider-dot" onclick="slideTo(1)"></span>
+        <span class="slider-dot" onclick="slideTo(2)"></span>
+        <span class="slider-dot" onclick="slideTo(3)"></span>
+        <span class="slider-dot" onclick="slideTo(4)"></span>
     </div>
 </section>
 
@@ -501,7 +507,7 @@ document.getElementById('hamburger').addEventListener('click',function(){documen
 document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open')})});
 
 // HERO SLIDER
-var slideIdx=0, slideCount=2, autoSlide;
+var slideIdx=0, slideCount=5, autoSlide;
 function slideTo(n){slideIdx=n;document.getElementById('slides').style.transform='translateX(-'+(slideIdx*100)+'%)';document.querySelectorAll('.slider-dot').forEach(function(d,i){d.classList.toggle('active',i===slideIdx)})}
 function slideMove(d){slideTo((slideIdx+d+slideCount)%slideCount)}
 function startAuto(){autoSlide=setInterval(function(){slideMove(1)},4500)}
