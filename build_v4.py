@@ -192,6 +192,9 @@ with open('index.html', 'w', encoding='utf-8') as f:
         .nav-cta:hover{{background:var(--gold)!important;color:var(--black)!important}}
         .hamburger{{display:none;cursor:pointer;flex-direction:column;gap:5px;z-index:102}}
         .hamburger span{{width:24px;height:1.5px;background:var(--gold);transition:var(--ease)}}
+        .hamburger.open span:nth-child(1){{transform:translateY(6.5px) rotate(45deg)}}
+        .hamburger.open span:nth-child(2){{opacity:0}}
+        .hamburger.open span:nth-child(3){{transform:translateY(-6.5px) rotate(-45deg)}}
 
         /* HERO SLIDER */
         .hero-slider{{position:relative;width:100%;overflow:hidden;max-height:680px}}
@@ -350,6 +353,8 @@ with open('index.html', 'w', encoding='utf-8') as f:
             .nav-links.open{{right:0}}
             .hamburger{{display:flex}}
             .sec{{padding:56px 18px}}
+            .slide img{{height:380px!important}}
+            .hero-slider{{height:380px!important}}
             .catalog-grid{{grid-template-columns:repeat(2,1fr);gap:12px}}
             .contact-wrap{{grid-template-columns:1fr;gap:36px}}
             .stats-inner{{grid-template-columns:repeat(2,1fr);gap:20px}}
@@ -358,7 +363,9 @@ with open('index.html', 'w', encoding='utf-8') as f:
             .fac-grid .g-item:first-child{{grid-column:span 1}}
             .cli-grid{{grid-template-columns:1fr}}
             .rev-grid{{grid-template-columns:1fr}}
-            .cat-bar{{gap:4px}}.cat-btn{{padding:7px 14px;font-size:.65rem}}
+            .cat-bar{{display:flex;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:10px;margin-bottom:20px;gap:8px;scrollbar-width:none}}
+            .cat-bar::-webkit-scrollbar{{display:none}}
+            .cat-btn{{flex:0 0 auto;padding:8px 16px;font-size:.7rem}}
             .c-row{{grid-template-columns:1fr}}
             .ship-cert{{padding:56px 18px}}
             .bs-grid{{grid-template-columns:1fr 1fr}}
@@ -733,8 +740,8 @@ with open('index.html', 'w', encoding='utf-8') as f:
 <script>
 // NAV
 window.addEventListener('scroll',function(){{document.getElementById('navbar').classList.toggle('scrolled',scrollY>60)}});
-document.getElementById('hamburger').addEventListener('click',function(){{document.getElementById('navLinks').classList.toggle('open')}});
-document.querySelectorAll('.nav-links a').forEach(function(a){{a.addEventListener('click',function(){{document.getElementById('navLinks').classList.remove('open')}})}});
+document.getElementById('hamburger').addEventListener('click',function(){{this.classList.toggle('open');document.getElementById('navLinks').classList.toggle('open')}});
+document.querySelectorAll('.nav-links a').forEach(function(a){{a.addEventListener('click',function(){{document.getElementById('navLinks').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}})}});
 
 // HERO SLIDER
 var slideIdx=0, slideCount=5, autoSlide;
