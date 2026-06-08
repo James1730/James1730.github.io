@@ -223,9 +223,8 @@ with open('index.html', 'w', encoding='utf-8') as f:
         /* BEST SELLERS */
         .bestsellers{{background:var(--black)}}
         .bs-grid{{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}}
-        .bs-item{{overflow:hidden;border-radius:3px;position:relative}}
-        .bs-item img{{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .5s ease;filter:brightness(.9)}}
-        .bs-item.bs-zoomout img{{object-fit:contain;background:#111;padding:8%}}
+        .bs-item{{overflow:hidden;border-radius:3px;position:relative;background:var(--black2)}}
+        .bs-item img{{width:100%;aspect-ratio:1/1;object-fit:contain;padding:10%;transition:transform .5s ease;filter:brightness(.9)}}
         .bs-item:hover img{{transform:scale(1.05);filter:brightness(1)}}
         .bs-label{{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);font-family:var(--ff-h);font-size:.9rem;color:var(--white);letter-spacing:1px}}
 
@@ -428,7 +427,7 @@ with open('index.html', 'w', encoding='utf-8') as f:
     </div>
     <div class="bs-grid">
         <div class="bs-item" onclick="openLB(this)"><img src="{I['best1']}" alt="Professional Snooker Table"><div class="bs-label">Professional Club Snooker</div></div>
-        <div class="bs-item bs-zoomout" onclick="openLB(this)"><img src="{I['best2']}" alt="Sundays Tournament Table"><div class="bs-label">Tournament Pool Table</div></div>
+        <div class="bs-item" onclick="openLB(this)"><img src="{I['best2']}" alt="Sundays Tournament Table"><div class="bs-label">Tournament Pool Table</div></div>
         <div class="bs-item" onclick="openLB(this)"><img src="{I['best3']}" alt="Sundays Competition Table"><div class="bs-label">Competition Series</div></div>
         <div class="bs-item" onclick="openLB(this)"><img src="{I['best4']}" alt="Classic Gold-Leg Snooker"><div class="bs-label">Classic Gold-Leg Snooker</div></div>
     </div>
