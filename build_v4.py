@@ -4,6 +4,7 @@ Build Sundays website V4 with Annie's curated image categories.
 Plus the 252-product catalog.
 """
 import json
+import urllib.parse
 from html import escape
 
 # Load products
@@ -37,8 +38,28 @@ for cat in CAT_ORDER:
         continue
     for p in products[cat]:
         hidden = ' hidden' if cat != DEFAULT_CAT else ''
-        product_cards += '<a class="p-card{}" href="{}" target="_blank" rel="noopener" data-cat="{}"><div class="p-img"><img src="{}" alt="{}" loading="lazy" onerror="this.src=\'https://sc02.alicdn.com/kf/A266d87002c594a26b5fee969b9f02ec4A.png\'"></div><div class="p-body"><h3>{}</h3><div class="p-price">{}</div><div class="p-moq">MOQ: 1 set</div></div></a>\n'.format(
-            hidden, escape(p['url']), escape(cat), escape(p['image']), escape(p['name']), escape(p['name']), escape(p['price']))
+        p_name = p['name']
+        p_url = p['url']
+        p_img = p['image']
+        p_price = p['price']
+        
+        # Build WhatsApp message URL
+        wa_text = "Hi Sundays, I'm interested in this product: {} {}".format(p_name, p_url)
+        wa_url = "https://wa.me/8618824156040?text={}".format(urllib.parse.quote(wa_text))
+        
+        product_cards += f'''<div class="p-card{hidden}" data-cat="{escape(cat)}">
+    <a href="{escape(p_url)}" target="_blank" rel="noopener" class="p-img">
+        <img src="{escape(p_img)}" alt="{escape(p_name)}" loading="lazy" onerror="this.src='https://sc02.alicdn.com/kf/A266d87002c594a26b5fee969b9f02ec4A.png'">
+    </a>
+    <div class="p-body">
+        <h3>{escape(p_name)}</h3>
+        <div class="p-price">{escape(p_price)}</div>
+        <div class="p-moq">MOQ: 1 set</div>
+        <div class="p-actions">
+            <a href="{wa_url}" target="_blank" class="p-wa-btn"><i class="fab fa-whatsapp"></i> Inquiry via WhatsApp</a>
+        </div>
+    </div>
+</div>\n'''
 
 # Image CDN URLs (from see_image uploads)
 IMAGES = {
@@ -298,7 +319,11 @@ with open('index.html', 'w', encoding='utf-8') as f:
         .p-body{{padding:16px 18px}}
         .p-body h3{{font-size:.82rem;font-weight:500;line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.3em}}
         .p-price{{font-family:var(--ff-h);font-size:1rem;font-weight:600;color:var(--gold)}}
-        .p-moq{{font-size:.68rem;color:var(--gray);margin-top:2px}}
+        .p-moq{{font-size:.68rem;color:var(--gray);margin-top:2px;margin-bottom:12px}}
+        .p-actions{{margin-top:12px;display:flex;gap:8px}}
+        .p-wa-btn{{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:#25D366;color:#fff;padding:10px;font-size:.7rem;font-weight:700;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:var(--ease)}}
+        .p-wa-btn:hover{{background:#1da851}}
+        .p-wa-btn i{{font-size:.9rem}}
         .product-count{{text-align:center;margin-bottom:20px;font-size:.78rem;color:var(--gray);letter-spacing:1px}}
 
         /* CONTACT */
@@ -423,6 +448,33 @@ with open('index.html', 'w', encoding='utf-8') as f:
         <div><div class="stat-n">8,000</div><div class="stat-l">m&sup2; Factory</div></div>
     </div>
 </div>
+
+<!-- TRUST BAR -->
+<section class="trust-bar" style="background:var(--black3);padding:40px 20px;border-top:1px solid rgba(201,169,110,.1);border-bottom:1px solid rgba(201,169,110,.1)">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center">
+        <div style="padding:10px">
+            <i class="fas fa-gem" style="color:var(--gold);font-size:1.8rem;margin-bottom:12px"></i>
+            <h4 style="font-family:var(--ff-h);font-size:.9rem;color:#fff;margin-bottom:6px">Premium Quality</h4>
+            <p style="font-size:.7rem;color:var(--gray)">Championship-grade slate & solid hardwood.</p>
+        </div>
+        <div style="padding:10px">
+            <i class="fas fa-hand-holding-usd" style="color:var(--gold);font-size:1.8rem;margin-bottom:12px"></i>
+            <h4 style="font-family:var(--ff-h);font-size:.9rem;color:#fff;margin-bottom:6px">Factory Direct Price</h4>
+            <p style="font-size:.7rem;color:var(--gray)">Cut the middleman. Genuine wholesale prices.</p>
+        </div>
+        <div style="padding:10px">
+            <i class="fas fa-tools" style="color:var(--gold);font-size:1.8rem;margin-bottom:12px"></i>
+            <h4 style="font-family:var(--ff-h);font-size:.9rem;color:#fff;margin-bottom:6px">OEM/ODM Support</h4>
+            <h4 style="font-family:var(--ff-h);font-size:.9rem;color:#fff;margin-bottom:6px">Custom Designs</h4>
+            <p style="font-size:.7rem;color:var(--gray)">Custom logo, colors, and unique finishes.</p>
+        </div>
+        <div style="padding:10px">
+            <i class="fas fa-shipping-fast" style="color:var(--gold);font-size:1.8rem;margin-bottom:12px"></i>
+            <h4 style="font-family:var(--ff-h);font-size:.9rem;color:#fff;margin-bottom:6px">Global Logistics</h4>
+            <p style="font-size:.7rem;color:var(--gray)">Safe container loading & door-to-door shipping.</p>
+        </div>
+    </div>
+</section>
 
 <!-- BEST SELLERS -->
 <section class="sec bestsellers" id="bestsellers">
@@ -578,12 +630,17 @@ with open('index.html', 'w', encoding='utf-8') as f:
         </form>
         <!-- Success Modal -->
         <div id="successModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.8);z-index:10000;align-items:center;justify-content:center">
-            <div style="background:var(--black3);border:1px solid var(--gold);border-radius:16px;padding:50px;max-width:500px;text-align:center">
-                <div style="font-size:3rem;margin-bottom:16px">&#10003;</div>
-                <h3 style="font-family:var(--ff-h);color:var(--gold);font-size:1.5rem;margin-bottom:12px">Inquiry Sent!</h3>
-                <p style="color:var(--gray-light);font-size:.9rem;line-height:1.7">Thank you for your interest. Our team will reply within <strong style="color:var(--gold)">24 hours</strong>.</p>
-                <p style="color:var(--gray);font-size:.8rem;margin-top:12px">You can also reach us on <a href="https://wa.me/8618824156040" target="_blank" style="color:#25D366">WhatsApp</a> for faster response.</p>
-                <button onclick="document.getElementById('successModal').style.display='none'" style="margin-top:24px;padding:12px 36px;background:var(--gold);color:var(--black);border:none;border-radius:8px;font-weight:600;cursor:pointer;font-size:.85rem">OK</button>
+            <div style="background:var(--black3);border:1px solid var(--gold);border-radius:16px;padding:50px;max-width:500px;text-align:center;position:relative">
+                <div style="font-size:3rem;margin-bottom:16px">&#128231;</div>
+                <h3 style="font-family:var(--ff-h);color:var(--gold);font-size:1.5rem;margin-bottom:12px">Inquiry Received!</h3>
+                <p style="color:var(--gray-light);font-size:.9rem;line-height:1.7">Thank you for contacting Sundays Billiards. We will get back to you with a formal quote within <strong style="color:var(--gold)">24 hours</strong>.</p>
+                
+                <div style="margin:24px 0;padding:20px;background:rgba(37,211,102,.1);border:1px dashed #25D366;border-radius:8px">
+                    <p style="color:#25D366;font-weight:600;font-size:.85rem;margin-bottom:12px">Need an Urgent Quote?</p>
+                    <a href="https://wa.me/8618824156040?text=Hi%20Sundays%2C%20I%20just%20submitted%20an%20inquiry%20on%20your%20website.%20Can%20we%20chat%3F" target="_blank" style="display:inline-block;padding:12px 24px;background:#25D366;color:#fff;text-decoration:none;border-radius:4px;font-weight:700;font-size:.8rem">Chat on WhatsApp Now</a>
+                </div>
+
+                <button onclick="document.getElementById('successModal').style.display='none'" style="background:transparent;border:none;color:var(--gray);cursor:pointer;font-size:.8rem;text-decoration:underline">Close Window</button>
             </div>
         </div>
     </div>
