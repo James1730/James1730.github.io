@@ -39,7 +39,7 @@ def extract_json_object(text, pos):
     except Exception:
         return None
 
-def scrape_pages(start_page=1, end_page=10):
+def scrape_pages(start_page=1, end_page=25):
     all_products = {}
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -100,8 +100,8 @@ def scrape_pages(start_page=1, end_page=10):
     return list(all_products.values())
 
 def merge_and_categorize():
-    # 1. Scrape latest products (pages 1 to 10)
-    new_products = scrape_pages(1, 10)
+    # 1. Scrape latest products (pages 1 to 25)
+    new_products = scrape_pages(1, 25)
     print(f"Scraped {len(new_products)} products from live Alibaba store.")
     
     # 2. Load existing products
