@@ -184,6 +184,15 @@ with open('index.html', 'w', encoding='utf-8') as f:
     <link rel="icon" type="image/png" href="{I['logo']}">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Translate Integration -->
+    <style>
+        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon {{ display: none !important; }}
+        body {{ top: 0px !important; }}
+        #google_translate_element {{ display: inline-block; vertical-align: middle; margin-right: 15px; }}
+        .skiptranslate {{ font-family: var(--ff-b) !important; font-size: 0.7rem !important; color: var(--gold) !important; }}
+    </style>
+
     <style>
         *,*::before,*::after{{margin:0;padding:0;box-sizing:border-box}}
         :root{{
@@ -417,6 +426,7 @@ with open('index.html', 'w', encoding='utf-8') as f:
 <nav class="nav" id="navbar">
     <a href="#" class="nav-logo"><img src="{I['logo']}" alt="Sundays"></a>
     <div class="nav-links" id="navLinks">
+        <div id="google_translate_element"></div>
         <a href="#bestsellers">Best Sellers</a>
         <a href="#factory">Factory</a>
         <a href="#clients">Clients</a>
@@ -471,7 +481,6 @@ with open('index.html', 'w', encoding='utf-8') as f:
         <div style="padding:10px">
             <i class="fas fa-tools" style="color:var(--gold);font-size:1.8rem;margin-bottom:12px"></i>
             <h4 style="font-family:var(--ff-h);font-size:.9rem;color:#fff;margin-bottom:6px">OEM/ODM Support</h4>
-            <h4 style="font-family:var(--ff-h);font-size:.9rem;color:#fff;margin-bottom:6px">Custom Designs</h4>
             <p style="font-size:.7rem;color:var(--gray)">Custom logo, colors, and unique finishes.</p>
         </div>
         <div style="padding:10px">
@@ -479,6 +488,14 @@ with open('index.html', 'w', encoding='utf-8') as f:
             <h4 style="font-family:var(--ff-h);font-size:.9rem;color:#fff;margin-bottom:6px">Global Logistics</h4>
             <p style="font-size:.7rem;color:var(--gray)">Safe container loading & door-to-door shipping.</p>
         </div>
+    </div>
+    
+    <!-- LEAD MAGNET: PDF CATALOG -->
+    <div style="text-align:center;margin-top:30px">
+        <a href="https://wa.me/8618824156040?text=Hi%20Sundays%2C%20I%20would%20like%20to%20receive%20the%20complete%202026%20Product%20Catalog%20PDF%20for%20wholesale." target="_blank" class="nav-cta" style="background:var(--gold);color:var(--black);font-weight:700;padding:14px 40px;border-radius:4px;display:inline-flex;align-items:center;gap:10px">
+            <i class="fas fa-file-pdf" style="font-size:1.2rem"></i> Download Full 2026 PDF Catalog
+        </a>
+        <p style="color:var(--gray);font-size:.7rem;margin-top:10px">*Request via WhatsApp for instant high-resolution file.</p>
     </div>
 </section>
 
@@ -922,6 +939,13 @@ waBtn.addEventListener('mouseenter',function(){{waPaused=true}});
 waBtn.addEventListener('mouseleave',function(){{waPaused=false}});
 waAnimate();
 </script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {{
+  new google.translate.TranslateElement({{pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}}, 'google_translate_element');
+}}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>''')
