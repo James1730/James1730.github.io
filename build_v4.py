@@ -56,7 +56,8 @@ for cat in CAT_ORDER:
         <div class="p-price">{escape(p_price)}</div>
         <div class="p-moq">MOQ: 1 set</div>
         <div class="p-actions">
-            <a href="{wa_url}" target="_blank" class="p-wa-btn"><i class="fab fa-whatsapp"></i> Inquiry via WhatsApp</a>
+            <a href="{wa_url}" target="_blank" class="p-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#contact" onclick="setInquiryProduct('{escape(p_name)}')" class="p-quote-btn"><i class="fas fa-envelope"></i> Get Quote</a>
         </div>
     </div>
 </div>\n'''
@@ -331,9 +332,18 @@ with open('index.html', 'w', encoding='utf-8') as f:
         .p-price{{font-family:var(--ff-h);font-size:1rem;font-weight:600;color:var(--gold)}}
         .p-moq{{font-size:.68rem;color:var(--gray);margin-top:2px;margin-bottom:12px}}
         .p-actions{{margin-top:12px;display:flex;gap:8px}}
-        .p-wa-btn{{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:#25D366;color:#fff;padding:10px;font-size:.7rem;font-weight:700;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:var(--ease)}}
+        .p-wa-btn{{flex:1.2;display:flex;align-items:center;justify-content:center;gap:6px;background:#25D366;color:#fff;padding:10px;font-size:.65rem;font-weight:700;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:var(--ease)}}
         .p-wa-btn:hover{{background:#1da851}}
-        .p-wa-btn i{{font-size:.9rem}}
+        .p-quote-btn{{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--gold);color:var(--gold);padding:10px;font-size:.65rem;font-weight:700;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:var(--ease)}}
+        .p-quote-btn:hover{{background:var(--gold);color:var(--black)}}
+        .p-wa-btn i, .p-quote-btn i{{font-size:.85rem}}
+        
+        /* SEARCH BAR */
+        .search-container{{max-width:600px;margin:0 auto 30px;position:relative}}
+        #catalogSearch{{width:100%;padding:14px 20px 14px 45px;background:var(--black3);border:1px solid rgba(201,169,110,.2);border-radius:30px;color:var(--white);font-family:var(--ff-b);font-size:.9rem;outline:none;transition:var(--ease)}}
+        #catalogSearch:focus{{border-color:var(--gold);box-shadow:0 0 15px rgba(201,169,110,.15)}}
+        .search-icon{{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.1rem}}
+        
         .product-count{{text-align:center;margin-bottom:20px;font-size:.78rem;color:var(--gray);letter-spacing:1px}}
 
         /* CONTACT */
@@ -573,6 +583,13 @@ with open('index.html', 'w', encoding='utf-8') as f:
         <div class="gold-bar"></div>
     </div>
     <div class="cat-bar">{cat_buttons}</div>
+    
+    <!-- CATALOG SEARCH -->
+    <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="catalogSearch" placeholder="Search 790+ products by keyword (e.g. LED, Snooker, Slate)..." onkeyup="searchProducts()">
+    </div>
+
     <div class="product-count" id="productCount">Showing {default_count} of {total} products</div>
     <div class="catalog-grid" id="catalogGrid">
 {product_cards}
@@ -915,6 +932,32 @@ function filterCat(cat,btn){{
 <script>
 // FAQ TOGGLE
 function toggleFaq(el){{var item=el.parentElement;item.classList.toggle('open')}}
+
+// CATALOG SEARCH
+function searchProducts(){{
+    var q=document.getElementById('catalogSearch').value.toLowerCase();
+    var cards=document.querySelectorAll('.p-card');
+    var visibleCount=0;
+    if(q.length > 1){{
+        cards.forEach(function(c){{
+            var name=c.querySelector('h3').innerText.toLowerCase();
+            var matches=name.includes(q);
+            c.classList.toggle('hidden',!matches);
+            if(matches)visibleCount++;
+        }});
+        document.getElementById('productCount').innerText='Found '+visibleCount+' products for "'+q+'"';
+    }}else{{
+        filterCat(DEFAULT_CAT);
+    }}
+}}
+
+// FORM PRE-FILL
+function setInquiryProduct(name){{
+    var msgBox=document.getElementsByName('Message')[0];
+    if(msgBox){{
+        msgBox.value = "I am interested in: " + name + ". Please provide a formal quotation and shipping details.";
+    }}
+}}
 
 // WHATSAPP FLOAT - bounce around screen like screensaver
 var waBtn=document.getElementById('waFloat');
