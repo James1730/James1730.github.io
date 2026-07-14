@@ -63,9 +63,9 @@ for cat in CAT_ORDER:
 
 # Image CDN URLs (from see_image uploads)
 IMAGES = {
-    # 首页轮播图 (Annie's new posters - AI Upscaled 4K)
-    'hero1': 'https://sc02.alicdn.com/kf/A1100fe05fb934075889c1c9ccc43442bu.png',  # Purple X6 AI Upscaled
-    'hero2': 'https://sc02.alicdn.com/kf/A22d345fa816a465b81055a8b7c86146fM.png',  # Yellow 5G AI Upscaled
+    # 首页轮播图 (Annie's new posters)
+    'hero1': 'https://sc02.alicdn.com/kf/Ad962b7a6c8e0459687689a16b4d36492u.png',  # Purple X6 Metal Table
+    'hero2': 'https://sc02.alicdn.com/kf/Aa14dc90e160342a784e9e6b2193be199m.png',  # Yellow 5G OEM/ODM
     'hero3': 'https://sc02.alicdn.com/kf/A4b49cca6d2d748088fff7946bfc9c3feZ.png',  # Customized pool table
     'hero4': 'https://sc02.alicdn.com/kf/A7b287a1b380c4247b7982aeb7dd217b7c.png',  # SDAiS Platinum balls
 
