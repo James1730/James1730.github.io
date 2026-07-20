@@ -39,7 +39,7 @@ def extract_json_object(text, pos):
     except Exception:
         return None
 
-def scrape_pages(start_page=1, end_page=50):
+def scrape_pages(start_page=1, end_page=25):
     all_products = {}
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
