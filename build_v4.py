@@ -119,14 +119,14 @@ with open('index.html', 'w', encoding='utf-8') as f:
     <meta name="keywords" content="pool table manufacturer, billiard table factory, snooker table supplier, pool table China, custom pool table, coin operated pool table, billiard table wholesale, OEM pool table, pool table factory Guangzhou, commercial billiard table, Sundays billiard, SDAiS, wholesale pool tables USA, billiard suppliers Europe, pool table manufacturer Middle East">
     <meta name="author" content="Guangzhou Wanjin Sports Equipment Co., Ltd.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://james1730.github.io/">
-    <link rel="alternate" hreflang="en" href="https://james1730.github.io/">
-    <link rel="alternate" hreflang="x-default" href="https://james1730.github.io/">
+    <link rel="canonical" href="https://sundaysbilliard.com/">
+    <link rel="alternate" hreflang="en" href="https://sundaysbilliard.com/">
+    <link rel="alternate" hreflang="x-default" href="https://sundaysbilliard.com/">
 
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://james1730.github.io/">
+    <meta property="og:url" content="https://sundaysbilliard.com/">
     <meta property="og:title" content="Sundays Billiard — Professional Pool Table Manufacturer | Factory Direct Since 2005">
     <meta property="og:description" content="19+ years billiard table manufacturing. Custom pool tables, snooker tables & accessories. ISO 9001 certified, 8,000m² factory, 50+ countries. Get factory-direct quote.">
     <meta property="og:image" content="{I['hero3']}">
@@ -148,7 +148,7 @@ with open('index.html', 'w', encoding='utf-8') as f:
       "@type": "Organization",
       "name": "Sundays Billiard",
       "alternateName": ["Guangzhou Wanjin Sports Equipment Co., Ltd.", "SDAiS"],
-      "url": "https://james1730.github.io/",
+      "url": "https://sundaysbilliard.com/",
       "logo": "{I['logo']}",
       "description": "Professional billiard table manufacturer in Guangzhou, China since 2005. Specializing in pool tables, snooker tables, coin-operated tables & accessories.",
       "foundingDate": "2005",
@@ -656,7 +656,7 @@ with open('index.html', 'w', encoding='utf-8') as f:
         </div>
         <form class="c-form" id="inquiryForm" action="https://formsubmit.co/sundaysbilliard@hotmail.com" method="POST">
             <input type="hidden" name="_subject" value="New Inquiry from Sundays Billiard Website">
-            <input type="hidden" name="_next" value="https://james1730.github.io/#contact">
+            <input type="hidden" name="_next" value="https://sundaysbilliard.com/#contact">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             <input type="text" name="_honey" style="display:none">
